@@ -10,7 +10,7 @@ const success = (location)=> {
    const long = location.coords.longitude;
    console.log(lat,long);
 
-   fetch(`http://localhost:3000/weather/getweather/${lat}/${long}`)
+   fetch(`https://open4tech.herokuapp.com/weather/getweather/${lat}/${long}`)
    .then(response => response.json())
    .then(response => {
         locationData = response;
