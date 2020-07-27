@@ -1,0 +1,34 @@
+<%- include('../partials/header') %>
+
+<div class="container questions">
+    <h1>Reviews page</h1>
+
+    <div class="navigation">
+        <a class="button" href="/">Back</a>
+        <a class="button" href="/reviews/new">New Review</a>
+    </div>
+
+
+
+    <% reviews.forEach((review) => { %>
+        
+        <div class="answer__container">
+            <div class="review">
+                <h4>Subject: <%= review.subject %></h4>
+                <p>Review: <%= review.review%> </p>
+            </div>
+            <div class="manage">
+                <a class="button btn-small" href="/reviews/<%= review._id %>/edit">Edit Review</a>
+                <form action="/reviews/<%=review._id%>?_method=DELETE" method="POST">
+                    <button class="button btn-small">Delete</button>
+                </form>
+            </div>
+        </div>
+        
+    <% }); %>
+
+</div>
+
+
+
+<%- include('../partials/footer') %>

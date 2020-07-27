@@ -1,0 +1,14 @@
+<%- include('../partials/header') %>
+
+<div class="container questions">
+    <h1>New comment for: <%=question.question %></h1>
+
+    <form class="form"action="/questions/<%=question._id%>/answer" method="POST">
+        <label for="answer">Answer:</label>
+        <input type="text" name="answer" required>
+        <button class="button">Submit</button>
+    </form>
+</div>
+
+
+<%- include('../partials/footer') %>

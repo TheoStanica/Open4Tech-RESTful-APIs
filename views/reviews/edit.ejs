@@ -1,0 +1,21 @@
+<%- include('../partials/header') %>
+
+<div class="container questions rev">
+    <h1>Edit review for <%=review.subject %></h1>
+
+    <form class="form" action="/reviews/<%=review._id%>?_method=PUT" method="POST">
+        <div class="input_el">
+            <label for="subject">Subject</label>
+            <input type="text" name="subject" value = '<%= review.subject %>' required>
+        </div>
+
+        <div class="input_el">
+            <label for="review">Review</label>
+            <input type="text" name="review" value = '<%= review.review %>' required>
+        </div>
+        
+        <button class="button">Submit</button>
+    </form>
+</div>
+
+<%- include('../partials/header') %>

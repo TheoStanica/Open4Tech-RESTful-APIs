@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<div class="container questions">
+    <h1>Questions</h1>
+    <div class="navigation">
+        <a class="button" href="/">Back</a>
+        <a class="button" href="/questions/new">New question</a>
+    </div>
+
+    <% questions.forEach(question => { %>
+        <div class="question__container">
+            <h4><%= question.question %></h4>
+            <a href="/questions/<%=question._id%>">See more</a>
+        </div>
+    <% }) %> 
+</div>
+
+<%- include('../partials/footer') %>

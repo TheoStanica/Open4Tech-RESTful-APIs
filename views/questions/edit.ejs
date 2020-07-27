@@ -1,0 +1,13 @@
+<%- include('../partials/header') %>
+
+<div class="container questions">
+    <h1>Edit question <%=question.question%></h1>
+    <form  class="form"action="/questions/<%=question._id%>?_method=PUT" method="POST">
+        <label for="question">Question:</label>
+        <input type="text" name="question" value="<%=question.question%>" required>
+
+        <button class="button">Submit</button>
+    </form>
+</div>
+
+<%- include('../partials/footer') %>

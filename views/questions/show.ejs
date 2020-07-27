@@ -1,0 +1,31 @@
+<%- include('../partials/header') %>
+
+<div class="container questions">
+    <h1>Question: <%= question.question %></h1>
+
+    <div class="navigation">
+        <a class="button" href="/questions/">Back</a>
+        <a class="button" href="/questions/<%=question._id%>/answer/new">Add new answer</a>
+        
+    </div>
+    <div class="navigation manage">
+        <a class="button" href="/questions/<%=question._id%>/edit">Edit Question</a>
+        <form class="form" action="/questions/<%=question._id%>?_method=DELETE" method="POST">
+            <button class="button">Delete</button>
+        </form>
+    </div>
+
+    <% question.answers.forEach(answer => { %>
+        <div class="answer__container">
+            <p><%= answer.answer%></p>
+            <div class="manage">
+                <a  class="button btn-small" href="/questions/<%=question._id%>/answer/<%=answer._id%>/edit">Edit answer</a>
+                <form action="/questions/<%=question._id%>/answer/<%=answer._id%>?_method=DELETE" method="POST">
+                    <button class="button btn-small">Delete</button>
+                </form>
+            </div>
+        </div>
+    <% }) %>
+</div>
+
+<%- include('../partials/footer') %>
